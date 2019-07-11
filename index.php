@@ -14,7 +14,11 @@
 	$document->loadHTML("<!DOCTYPE html>");
 
 	$html = $document->createElement("html");
+	$html->setAttribute("lang", "en-CA");
 	$document->appendChild($html);
+
+	$meta = $document->createElement("meta");
+	$meta->setAttribute("charset", "UTF-8");
 
 	$title = $document->createElement("title");
 	$title->nodeValue = "Application Test";
@@ -31,10 +35,10 @@
 	$js->nodeValue = "function showPerson(n,e) { alert('Name: ' + n + '\\nEmail: ' + e); };";
 
 	$head = $document->createElement("head");
+	$head->appendChild($meta);
 	$head->appendChild($title);
 	$head->appendChild($css);
 	$head->appendChild($js);
-	$html->appendChild($head);
 
 	$tbl = $document->createElement("table");	
 	$tbl->setAttribute("class", "tbl");
